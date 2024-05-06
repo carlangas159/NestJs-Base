@@ -1,0 +1,16 @@
+nest g resource empresas --no-spec
+nest g resource auth --no-spec
+
+nest g mo  database modules
+nest g s  database modules
+nest g cl  database modules
+nest g pr  database modules
+
+nest g mo  users modules
+nest g s  users modules
+nest g cl  users modules
+nest g co  users modules
+
+ nest g f http-exception filters
+
+ nest g gu auth guard

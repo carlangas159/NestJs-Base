@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+    backcuba:
+        container_name: backcuba
+        image: node:lts
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        restart: always
+
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: base
+        ports:
+            - "3000:3000"
+            - "5173:5173"
+        environment:
+            -NODE_VERSION: "18.17.0"
+        volumes:
+            - .:/app
+        networks:
+            - api
+networks:
+    api:
+        driver: bridge
